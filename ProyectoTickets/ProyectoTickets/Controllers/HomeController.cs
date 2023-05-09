@@ -13,34 +13,25 @@ namespace ProyectoTickets.Controllers
             _logger = logger;
         }
 
-        
-        public IActionResult Privacy()
-        {
-            SuperTicketContext context = new SuperTicketContext();
-            var ListarUsuarios = context.Usuarios.ToList();
-            return View(ListarUsuarios);
-        }
-        [HttpGet]
-
-
-
         [HttpGet]
         public IActionResult Index()
         {
-            SuperTicketContext context = new SuperTicketContext();
-            var LisTicket = context.Tickets.ToList();
-            return View(LisTicket);
+            return View();
         }
-
 
         [HttpGet]
-        public IActionResult Compras()
+        public IActionResult Compras()  
         {
-            SuperTicketContext context = new SuperTicketContext();
-            var Liscompra = context.Compras.ToList();
-            return View(Liscompra);
+            SuperTicketContext _context = new SuperTicketContext();
+            var ListarUsuarios = _context.Usuarios.ToList();
+            return View(ListarUsuarios);
         }
 
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
 
 
 
